@@ -1,0 +1,13 @@
+name = "ContinuedFractions"
+uuid = "11738ef7-5d34-4561-8fd5-55b6644beee9"
+authors = ["James Cook <cookjws@gmail.com>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
