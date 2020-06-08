@@ -17,13 +17,14 @@ function continuedfraction(v::V, u::U; atol=0,
   n = 8
   a, b = continuedfraction(v, u, n, 2n)
   n *= 2
-  while n <= 2^10
-    isapprox(a, b, rtol=rtol, atol=atol) && return b, true
+  converged = isapprox(a, b, rtol=rtol, atol=atol)
+  while !converged && n <= 2^10
     a = deepcopy(b)
     n *= 2
     b = continuedfraction(v, u, n)
+    converged = isapprox(a, b, rtol=rtol, atol=atol)
   end
-  return b, isapprox(a, b, rtol=rtol, atol=atol)
+  return b, converged
 end
 function continuedfraction(v::V, u::U, n::Int, m::Int
     ) where {V<:Function, U<:Function}
