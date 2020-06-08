@@ -10,7 +10,7 @@ export continuedfraction
 Calculate the continued fraction until convergence against specified tolerance
 ∑ᵢ uᵢ/vᵢ = v(0) + u(1) / (v(1) + u(2) / (v(2) + u(3)/(v(3) + ...)))
 """
-function continuedfraction(v::V, u::U, atol=0,
+function continuedfraction(v::V, u::U; atol=0,
     rtol=sqrt(eps(typeof(real(v(1) / u(1)))))
     ) where {V<:Function, U<:Function}
   n = 8
