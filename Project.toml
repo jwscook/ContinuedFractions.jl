@@ -1,7 +1,7 @@
 name = "ContinuedFractions"
 uuid = "11738ef7-5d34-4561-8fd5-55b6644beee9"
 authors = ["James Cook <cookjws@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [compat]
 julia = "1"
